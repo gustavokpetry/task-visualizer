@@ -2,7 +2,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Task Visualizer - Progress Focus</title>
+    <title>Task Visualizer - Jira Style</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link
@@ -16,58 +16,79 @@
   </head>
   <body class="bg-dark text-light">
     <div class="container py-4">
-      <header class="mb-4 text-center">
-        <h1 class="h2 fw-bold">Task Visualizer</h1>
-        <p class="text-secondary mb-0">
-          Foque no progresso das suas tarefas e acompanhe a evolução.
-        </p>
+      <header class="mb-4">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-between gap-2"
+        >
+          <div>
+            <h1 class="h3 mb-1 fw-bold tracking-tight">Task Visualizer</h1>
+            <p class="text-secondary mb-0">
+              Visualização de tarefas e subtarefas.
+            </p>
+          </div>
+        </div>
       </header>
 
       <div class="row g-4">
         <div class="col-12 col-lg-4">
           <div class="card bg-body-tertiary border-secondary h-100">
             <div class="card-body">
-              <h2 class="h5 mb-3">Nova tarefa</h2>
+              <h2 class="h5 mb-3 text-white">Nova tarefa</h2>
               <form id="task-form" class="vstack gap-3">
                 <div>
-                  <label for="title" class="form-label">Título</label>
+                  <label for="title" class="form-label text-white">Título</label>
                   <input
                     id="title"
                     name="title"
                     type="text"
                     class="form-control"
-                    placeholder="Ex: Estudar Git"
+                    placeholder="Ex: Implementar tela de login"
                     required
                   />
                 </div>
 
                 <div>
-                  <label for="goal" class="form-label">Meta de aprendizado</label>
-                  <input
+                  <label for="goal" class="form-label text-white">Descrição / Meta</label>
+                  <textarea
                     id="goal"
                     name="goal"
-                    type="text"
                     class="form-control"
-                    placeholder="Ex: Entender commit, push e branch"
-                  />
+                    rows="2"
+                    placeholder="Ex: Estudar autenticação, tokens, validação, etc."
+                  ></textarea>
                 </div>
 
-                <div>
-                  <label for="urgency" class="form-label">Urgência</label>
-                  <select
-                    id="urgency"
-                    name="urgency"
-                    class="form-select"
-                    aria-label="Nível de urgência"
-                  >
-                    <option value="low">Baixa</option>
-                    <option value="medium" selected>Média</option>
-                    <option value="high">Alta</option>
-                  </select>
+                <div class="row g-2">
+                  <div class="col-6">
+                    <label for="urgency" class="form-label text-white">Urgência</label>
+                    <select
+                      id="urgency"
+                      name="urgency"
+                      class="form-select form-select-sm"
+                    >
+                      <option value="low">Baixa</option>
+                      <option value="medium" selected>Média</option>
+                      <option value="high">Alta</option>
+                    </select>
+                  </div>
+                  <div class="col-6">
+                    <label for="difficulty" class="form-label text-white"
+                      >Dificuldade</label
+                    >
+                    <select
+                      id="difficulty"
+                      name="difficulty"
+                      class="form-select form-select-sm"
+                    >
+                      <option value="easy">Fácil</option>
+                      <option value="medium" selected>Média</option>
+                      <option value="hard">Difícil</option>
+                    </select>
+                  </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">
-                  Adicionar tarefa
+                <button type="submit" class="btn btn-success w-100">
+                  Criar tarefa
                 </button>
               </form>
             </div>
@@ -75,19 +96,19 @@
         </div>
 
         <div class="col-12 col-lg-8">
-          <div class="card bg-body-tertiary border-secondary">
-            <div class="card-body">
-              <div
-                class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3"
-              >
-                <h2 class="h5 mb-0">Minhas tarefas</h2>
-                <div class="text-end small text-secondary" id="tasks-summary">
-                </div>
+          <div class="card bg-body-tertiary border-secondary mb-3">
+            <div
+              class="card-body d-flex flex-wrap justify-content-between align-items-center gap-2"
+            >
+              <div>
+                <h2 class="h5 mb-0 text-white">Board de tarefas</h2>
               </div>
-
-              <div id="tasks-container" class="vstack gap-3">
+              <div class="text-end small text-secondary" id="tasks-summary">
               </div>
             </div>
+          </div>
+
+          <div id="tasks-container" class="vstack gap-3">
           </div>
         </div>
       </div>
