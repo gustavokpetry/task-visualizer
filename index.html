@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Task Visualizer</h1>
+
+      <section class="task-form">
+        <h2>Nova tarefa</h2>
+        <form id="task-form">
+          <div class="field">
+            <label for="title">Título</label>
+            <input id="title" name="title" type="text" required />
+          </div>
+
+          <div class="field">
+            <label for="goal">Meta de aprendizado</label>
+            <input id="goal" name="goal" type="text" />
+          </div>
+
+          <div class="field">
+            <label for="urgency">Urgência</label>
+            <select id="urgency" name="urgency">
+              <option value="low">Baixa</option>
+              <option value="medium">Média</option>
+              <option value="high">Alta</option>
+            </select>
+          </div>
+
+          <button type="submit">Adicionar tarefa</button>
+        </form>
+      </section>
+
+      <section class="task-list">
+        <h2>Minhas tarefas</h2>
+        <div id="tasks-container">
+          <!-- JS vai renderizar as tasks aqui -->
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
