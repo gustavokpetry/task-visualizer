@@ -100,3 +100,8 @@ task-urgency.high {
   font-size: 0.875rem;
   color: #9ca3af;
 }
+
+.task-progress {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
