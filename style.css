@@ -1,107 +1,43 @@
-* {
-  box-sizing: border-box;
-}
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #020617;
-  color: #e5e7eb;
-  margin: 0;
-  padding: 2rem;
+  background: radial-gradient(circle at top, #1f2933 0, #020617 55%) fixed;
 }
 
-.app {
-  max-width: 800px;
-  margin: 0 auto;
+.card.bg-body-tertiary {
+  background-color: rgba(15, 23, 42, 0.9) !important;
 }
 
-h1 {
-  margin-bottom: 1.5rem;
+header h1 {
+  letter-spacing: 0.06em;
 }
 
-.task-form,
-.task-list {
-  background: #020617;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid #1f2937;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-
-label {
-  font-size: 0.875rem;
-  margin-bottom: 0.25rem;
-}
-
-input,
-select,
-button {
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
-  border: 1px solid #374151;
-  background: #020617;
-  color: #e5e7eb;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  background: #3b82f6;
-  font-weight: 500;
-}
-
-button:hover {
-  filter: brightness(1.1);
-}
-
-.task-card {
-  border: 1px solid #1f2937;
-  border-radius: 0.75rem;
-  padding: 1rem;
-  margin-bottom: 0.75rem;
-}
-
-.task-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.task-title {
-  font-weight: 600;
-}
-
-.task-urgency {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.task-urgency.low {
+.badge-urgency-low {
+  background-color: rgba(34, 197, 94, 0.15);
   color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.5);
 }
 
-.task-urgency.medium {
+.badge-urgency-medium {
+  background-color: rgba(234, 179, 8, 0.15);
   color: #eab308;
+  border: 1px solid rgba(234, 179, 8, 0.5);
 }
 
-task-urgency.high {
+.badge-urgency-high {
+  background-color: rgba(239, 68, 68, 0.15);
   color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.6);
 }
 
-.task-goal {
-  font-size: 0.875rem;
-  color: #9ca3af;
-}
-
-.task-progress {
+.progress-label {
   font-size: 0.8rem;
-  color: #9ca3af;
+}
+
+.empty-state {
+  border-radius: 0.5rem;
+  border: 1px dashed rgba(148, 163, 184, 0.5);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #94a3b8;
 }
